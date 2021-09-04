@@ -36,7 +36,7 @@ function AnimatedSlideInComponent({ direction = "left", offset = 30, children })
   return (
     <motion.section
       initial={{ x: x.initial }}
-      animate={{ 
+      animate={{
         x: inView && x.target,
         transitionEnd:{
           x: inView && 0
@@ -50,6 +50,7 @@ function AnimatedSlideInComponent({ direction = "left", offset = 30, children })
   );
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default props => (
   <StyledDiv className="App">
     <AnimationReveal {...props} />
