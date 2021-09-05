@@ -26,7 +26,7 @@ const appRoute = [
 
 const App = () => {
     return (
-        <Routes routes={appRoute}/>
+        <Routes/>
     );
 }
 

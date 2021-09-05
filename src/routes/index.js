@@ -1,21 +1,18 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 import PropTypes from 'prop-types';
-import {map} from 'lodash'
+import Landing from "../modules/landing";
+import CodeEditor from "../modules/editor";
+import Login from "../modules/auth/views/login";
 
-const Routes = ({routes}) => {
+const Routes = () => {
     return (
-        <Router>
-            <Switch>
-                {
-                    map(routes, (route) => (
-                        <Route path={route.path} exact={route.exact} key={route.label}>
-                            {route.component}
-                        </Route>
-                    ))
-                }
-            </Switch>
-        </Router>
+        <Switch>
+            <Route path='/' exact={true} component={Landing}/>
+            <Route path='/login' exact={true} component={Login}/>
+            <Route path='/codeEditor' exact={true} component={CodeEditor}/>
+            <Route path='/' exact={true} component={Landing}/>
+        </Switch>
     );
 };
 
