@@ -1,8 +1,4 @@
 import Routes from "./routes";
-import Landing from "./modules/landing";
-import Login from "./modules/auth/views/login";
-import CodeEditor from "./modules/editor";
-
 // const appRoute = [
 //     {
 //         label: 'landing',
