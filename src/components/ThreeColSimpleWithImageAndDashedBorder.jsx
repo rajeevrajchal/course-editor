@@ -2,12 +2,12 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import {css} from "styled-components/macro"; //eslint-disable-line
-import { SectionHeading as HeadingTitle, Subheading } from "src/components/misc/Headings.jsx";
-import { PrimaryButton as PrimaryButtonBase } from "src/components/misc/Buttons.jsx";
+import { SectionHeading as HeadingTitle, Subheading } from "components/misc/Headings.jsx";
+import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.jsx";
 import { ReactComponent as UserIcon } from "feather-icons/dist/icons/user.svg";
 import { ReactComponent as TagIcon } from "feather-icons/dist/icons/tag.svg";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../src/images/svg-decorator-blob-1.svg";
-import { ReactComponent as SvgDecoratorBlob2 } from "../../src/images/svg-decorator-blob-3.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../images/svg-decorator-blob-1.svg";
+import { ReactComponent as SvgDecoratorBlob2 } from "../images/svg-decorator-blob-3.svg";
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -83,38 +83,8 @@ export default ({
   return (
     <Container>
       <Content>
-        <HeadingInfoContainer>
-          {subheading && <Subheading>{subheading}</Subheading>}
-          <HeadingTitle>{heading}</HeadingTitle>
-          <HeadingDescription>{description}</HeadingDescription>
-        </HeadingInfoContainer>
-        <ThreeColumn>
-          {blogPosts.map((post, index) => (
-            <Column key={index}>
-              <Card>
-                <Image imageSrc={post.imageSrc} />
-                <Details>
-                  <MetaContainer>
-                    <Meta>
-                      <UserIcon />
-                      <div>{post.author}</div>
-                    </Meta>
-                    <Meta>
-                      <TagIcon />
-                      <div>{post.category}</div>
-                    </Meta>
-                  </MetaContainer>
-                  <Title>{post.title}</Title>
-                  <Description>{post.description}</Description>
-                  <Link href={post.url}>Read Post</Link>
-                </Details>
-              </Card>
-            </Column>
-          ))}
-        </ThreeColumn>
+
       </Content>
-      <DecoratorBlob1 />
-      <DecoratorBlob2 />
     </Container>
   );
 };

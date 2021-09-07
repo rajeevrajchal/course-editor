@@ -104,10 +104,10 @@ export default ({popularCourse}) => {
                 <CardSlider ref={setSliderRef} {...sliderSettings}>
                     {map(popularCourse || [],(card, index) => (
                         <Card key={index}>
-                            <CardImage imageSrc={card.imageSrc} />
+                            <CardImage imageSrc={card.image} />
                             <TextInfo>
                                 <TitleReviewContainer>
-                                    <Title>{card.title}</Title>
+                                    <Title>{card.name}</Title>
                                     <RatingsInfo>
                                         <StarIcon />
                                         <Rating>{card.rating}</Rating>
@@ -124,7 +124,7 @@ export default ({popularCourse}) => {
                                         <IconContainer>
                                             <PriceIcon />
                                         </IconContainer>
-                                        <Text>{card.pricingText}</Text>
+                                        <Text>{card.price}</Text>
                                     </IconWithText>
                                 </SecondaryInfoContainer>
                                 <Description>{card.description}</Description>

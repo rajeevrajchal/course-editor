@@ -1,10 +1,9 @@
 import axios from 'axios';
 import {toast} from 'react-toastify';
 
-export const BASE_URL = '';
+export const BASE_URL = process.env.REACT_APP_API_URL;
 
 export const callApi = async ({url, method = 'GET', data, headers, params}) => {
-    console.log('the callapi data', {url, method, data, headers, params})
     const config = {
         method: method,
         url: BASE_URL + url,

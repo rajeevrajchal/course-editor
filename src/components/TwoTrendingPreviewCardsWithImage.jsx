@@ -5,7 +5,6 @@ import {css} from "styled-components/macro"; //eslint-disable-line
 import {SectionHeading} from "components/misc/Headings.jsx";
 import {PrimaryLink as PrimaryLinkBase} from "components/misc/Links.jsx";
 import {PrimaryButton as PrimaryButtonBase} from "components/misc/Buttons.jsx";
-import {ReactComponent as LocationIcon} from "feather-icons/dist/icons/map-pin.svg";
 import {ReactComponent as TimeIcon} from "feather-icons/dist/icons/clock.svg";
 import {ReactComponent as TrendingIcon} from "feather-icons/dist/icons/trending-up.svg";
 import {ReactComponent as ArrowRightIcon} from "images/arrow-right-icon.svg";
@@ -80,25 +79,25 @@ export default ({trendingCourse}) => {
                     {map(trendingCourse || [], (card, index) => (
                         <CardColumn key={index}>
                             <Card>
-                                <CardImage imageSrc={card.imageSrc}/>
+                                <CardImage imageSrc={card.image}/>
                                 <CardText>
                                     <CardHeader>
-                                        <CardType>{card.type}</CardType>
+                                        <CardType>{card.courseType}</CardType>
                                         <CardPrice>
-                                            <CardPriceAmount>{card.pricePerDay}</CardPriceAmount> per day
+                                            <CardPriceAmount>{card.price}</CardPriceAmount> per day
                                         </CardPrice>
                                     </CardHeader>
-                                    <CardTitle>{card.title}</CardTitle>
+                                    <CardTitle>{card.name}</CardTitle>
                                     <CardMeta>
                                         <CardMetaFeature>
-                                            <TrendingIcon/> {card.trendingText}
+                                            <TrendingIcon/> {card.type}
                                         </CardMetaFeature>
                                         <CardMetaFeature>
-                                            <TimeIcon/> {card.durationText}
+                                            <TimeIcon/> {card.duration}
                                         </CardMetaFeature>
-                                        <CardMetaFeature>
-                                            <LocationIcon/> {card.locationText}
-                                        </CardMetaFeature>
+                                        {/*<CardMetaFeature>*/}
+                                        {/*    <LocationIcon/> {card.locationText}*/}
+                                        {/*</CardMetaFeature>*/}
                                     </CardMeta>
                                     <CardAction onClick={() => history.push('/codeEditor')}>Enroll Now</CardAction>
                                 </CardText>
